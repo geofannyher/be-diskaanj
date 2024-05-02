@@ -4,16 +4,16 @@ const { createClient } = require("@supabase/supabase-js");
 const app = express();
 const PORT = 5000;
 
-const supabaseUrl = "https://oygwaelankvwsougpseb.supabase.co";
+const supabaseUrl = "https://fcrawhxjclgdonqzooka.supabase.co";
 const supabaseKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im95Z3dhZWxhbmt2d3NvdWdwc2ViIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTIxMTM1MjAsImV4cCI6MjAyNzY4OTUyMH0.1YU3syGgdBIXKgbxmfma0ehnbeJhzDtMcSrChFN2w9c";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZjcmF3aHhqY2xnZG9ucXpvb2thIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ2NTQwNDMsImV4cCI6MjAzMDIzMDA0M30.LuP7aJVckLC45J_IxYCWT00KlwkyMTOQn-8wgsXmKOU";
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 app.use(bodyParser.json());
 
 app.get("/api/chat", async (req, res) => {
   try {
-    const { data, error } = await supabase.from("diska_message").select("*");
+    const { data, error } = await supabase.from("simpul_test").select("*");
     if (error) throw error;
     return res.status(200).json(data);
   } catch (error) {
