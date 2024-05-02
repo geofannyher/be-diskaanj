@@ -4,7 +4,7 @@ const { createClient } = require("@supabase/supabase-js");
 const app = express();
 const PORT = 5000;
 
-const supabaseUrl = "https://fcrawhxjclgdonqzooka.supabase.co";
+const supabaseUrl = "https://fcrawhxjclgdonqzooka.supabase.co/";
 const supabaseKey =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZjcmF3aHhqY2xnZG9ucXpvb2thIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ2NTQwNDMsImV4cCI6MjAzMDIzMDA0M30.LuP7aJVckLC45J_IxYCWT00KlwkyMTOQn-8wgsXmKOU";
 
@@ -29,7 +29,7 @@ app.post("/api/chat", async (req, res) => {
 
   try {
     const { error } = await supabase
-      .from("diska_message")
+      .from("simpul_test")
       .insert([{ sender, message }]);
     if (error) throw error;
     res.status(201).json("berhasil kirim");
