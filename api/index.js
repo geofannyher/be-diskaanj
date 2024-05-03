@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const { createClient } = require("@supabase/supabase-js");
 const app = express();
+const cors = require('cors')
 const PORT = 5000;
 
 const supabaseUrl = "https://fcrawhxjclgdonqzooka.supabase.co";
@@ -10,7 +11,7 @@ const supabaseKey =
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 app.use(bodyParser.json());
-
+app.use(cors())
 app.get("/api/chat", async (req, res) => {
   try {
     const { data, error } = await supabase.from("simpul-test").select("*");
